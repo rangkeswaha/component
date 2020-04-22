@@ -8,11 +8,12 @@ import { InputComponent } from './input/input.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ListComponent } from './list/list.component';
 import { EditComponent } from './edit/edit.component';
+import { Router} from '@angular/router'
 
 const ROUTES:Routes = [
   { path:'input', component : InputComponent},
   { path:'list', component : ListComponent},
-  { path:'edit', component : EditComponent},
+  { path:'edit', component : EditComponent},{path:'list/:nama/:penjelasan', component : ListComponent}
 ]
 
 @NgModule({

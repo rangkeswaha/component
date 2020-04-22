@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { Router} from '@angular/router'
 
 @Component({
   selector: 'app-input',
@@ -8,16 +8,14 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class InputComponent implements OnInit {
 
-  constructor(public route: ActivatedRoute) {
-   }
-
-  nama = String;
-  penjelasan = String;
-
-  check(){
-    
-  }
+  constructor(private router : Router) { }
   ngOnInit() {
   }
+  nama  :string;
+  penjelasan : string;
 
+  check()
+  {
+     this.router.navigate(['/list', this.nama, this.penjelasan]);
+  }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute} from '@angular/router'
 
 @Component({
   selector: 'app-list',
@@ -8,12 +8,19 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class ListComponent implements OnInit {
 
-  constructor(public route: ActivatedRoute) {
+  constructor(private route : ActivatedRoute) { }
 
-   }
-daftar = String[100];
+  nama : String;
+  deskripsi : String;
+  daftarnama : String[];
 
   ngOnInit() {
+    let namajur = this.route.snapshot.paramMap.get('nama');
+    this.nama = namajur;
+    let des = this.route.snapshot.paramMap.get('penjelasan');
+    this.deskripsi = des;
+    this.daftarnama.push(this.nama);
+
   }
 
 }
