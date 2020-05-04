@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { InputComponent } from './input/input.component';
+
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
@@ -8,15 +7,4 @@ import { InputComponent } from './input/input.component';
 })
 export class AppComponent  {
   name = 'Angular';
-
-  constructor(private router : Router) {}
-  Home1(){
-    this.router.navigate(['/input']);
-  }
-  Home2(){
-    this.router.navigate(['/list']);
-  }
-  Home3(){
-    this.router.navigate(['/edit']);
-  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router'
+import { Router} from '@angular/router'
+import { GlobSerService } from '../glob-ser.service';
 
 @Component({
   selector: 'app-list',
@@ -8,19 +9,12 @@ import {ActivatedRoute} from '@angular/router'
 })
 export class ListComponent implements OnInit {
 
-  constructor(private route : ActivatedRoute) { }
-
-  nama : String;
-  deskripsi : String;
-  daftarnama : String[];
+  datadariglob : any;
+  constructor(private router: Router, public variabelglobal : GlobSerService ) {
+     this.datadariglob = this.variabelglobal.getData();
+   }
 
   ngOnInit() {
-    let namajur = this.route.snapshot.paramMap.get('nama');
-    this.nama = namajur;
-    let des = this.route.snapshot.paramMap.get('penjelasan');
-    this.deskripsi = des;
-    this.daftarnama.push(this.nama);
-
   }
 
 }
