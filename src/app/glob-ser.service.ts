@@ -6,9 +6,6 @@ export class GlobSerService {
   private Data  = [{
    jurusan : 'Infomatika',
    desk : 'membuat program'
-  }, {
-    jurusan : 'Mesin',
-    desk : 'segalanya tentang pembuatan mesin'
   }];
 
   public getData() {
